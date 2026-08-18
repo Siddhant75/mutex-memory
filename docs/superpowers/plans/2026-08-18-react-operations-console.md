@@ -116,4 +116,4 @@
 - [x] Run `pnpm --filter @mutex-memory/web build` and inspect `apps/web/dist`.
 - [x] Run monorepo typecheck, all tests, and `pnpm test:concurrency`.
 - [ ] Start Vite fixture mode and use the approved in-app browser to verify desktop and narrow layouts plus Safe/Unsafe interactions.
-- [ ] Initialize/publish the GitHub repository only after a final secret scan and successful verification.
+- [x] Initialize/publish the GitHub repository only after a final secret scan and successful verification.
