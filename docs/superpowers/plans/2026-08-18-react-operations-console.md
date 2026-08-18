@@ -38,11 +38,11 @@
 - Produces: `DemoApiClient` with `reset(): Promise<DemoTrace>` and `run(input: RunInput): Promise<DemoRunTrace>`.
 - Produces: `createHttpDemoApiClient(baseUrl, fetchImpl?)` and validated frontend evidence types.
 
-- [ ] Write API-client tests proving route/body construction, envelope validation, and sanitized errors.
-- [ ] Run the focused tests and confirm they fail because the client does not exist.
-- [ ] Add the web workspace configuration and exact dependencies.
-- [ ] Implement the minimal Zod schemas and HTTP client.
-- [ ] Run focused tests and `pnpm --filter @mutex-memory/web typecheck`.
+- [x] Write API-client tests proving route/body construction, envelope validation, and sanitized errors.
+- [x] Run the focused tests and confirm they fail because the client does not exist.
+- [x] Add the web workspace configuration and exact dependencies.
+- [x] Implement the minimal Zod schemas and HTTP client.
+- [x] Run focused tests and `pnpm --filter @mutex-memory/web typecheck`.
 
 ### Task 2: Explicit Fixture Client and Controller
 
@@ -56,11 +56,11 @@
 - Consumes: `DemoApiClient`, `DemoMode`, `AgentMode`, `DemoRunTrace` from Task 1.
 - Produces: `createFixtureDemoApiClient()` and `useDemoConsole(client)` state/actions.
 
-- [ ] Write tests for deterministic Safe/Unsafe fixture traces and controller state preservation on failure.
-- [ ] Run focused tests and confirm the missing-feature failures.
-- [ ] Implement the fixture client with canonical UUIDs and evidence.
-- [ ] Implement the controller with selected modes, reset/run operations, pending state, and sanitized error state.
-- [ ] Run focused tests and web typecheck.
+- [x] Write tests for deterministic Safe/Unsafe fixture traces and controller state preservation on failure.
+- [x] Run focused tests and confirm the missing-feature failures.
+- [x] Implement the fixture client with canonical UUIDs and evidence.
+- [x] Implement the controller with selected modes, reset/run operations, pending state, and sanitized error state.
+- [x] Run focused tests and web typecheck.
 
 ### Task 3: Operations Console Components
 
@@ -79,11 +79,11 @@
 - Consumes: controller state/actions from Task 2.
 - Produces: `App({ client, fixtureMode })`, the single judge-facing screen.
 
-- [ ] Write interaction tests proving Reset, Unsafe, and Safe stories are visible and accessible.
-- [ ] Run focused tests and confirm missing-component failures.
-- [ ] Implement the header and seven evidence panels with semantic HTML.
-- [ ] Compose the panels in `App` and keep operation errors inline.
-- [ ] Run focused tests and web typecheck.
+- [x] Write interaction tests proving Reset, Unsafe, and Safe stories are visible and accessible.
+- [x] Run focused tests and confirm missing-component failures.
+- [x] Implement the header and seven evidence panels with semantic HTML.
+- [x] Compose the panels in `App` and keep operation errors inline.
+- [x] Run focused tests and web typecheck.
 
 ### Task 4: Visual System and Entrypoint
 
@@ -97,10 +97,10 @@
 - Consumes: `App` and API factories.
 - Produces: a Vite application selected by `VITE_API_URL` and `VITE_USE_FIXTURES`.
 
-- [ ] Add tests proving fixture mode is explicitly labeled and reduced-data states remain readable.
-- [ ] Implement graphite/amber/cyan visual tokens, responsive grid, focus states, status motion, and reduced-motion behavior.
-- [ ] Wire `main.tsx` to fixture mode only on exact opt-in; otherwise require `VITE_API_URL`.
-- [ ] Run web tests, typecheck, and production build.
+- [x] Add tests proving fixture mode is explicitly labeled and reduced-data states remain readable.
+- [x] Implement graphite/amber/cyan visual tokens, responsive grid, focus states, status motion, and reduced-motion behavior.
+- [x] Wire `main.tsx` to fixture mode only on exact opt-in; otherwise require `VITE_API_URL`.
+- [x] Run web tests, typecheck, and production build.
 
 ### Task 5: Hosting and End-to-End Verification
 
@@ -112,8 +112,8 @@
 - Consumes: `apps/web` production build.
 - Produces: Amplify build instructions with artifact directory `apps/web/dist`.
 
-- [ ] Add the Amplify monorepo build definition and document frontend environment variables.
-- [ ] Run `pnpm --filter @mutex-memory/web build` and inspect `apps/web/dist`.
-- [ ] Run monorepo typecheck, all tests, and `pnpm test:concurrency`.
+- [x] Add the Amplify monorepo build definition and document frontend environment variables.
+- [x] Run `pnpm --filter @mutex-memory/web build` and inspect `apps/web/dist`.
+- [x] Run monorepo typecheck, all tests, and `pnpm test:concurrency`.
 - [ ] Start Vite fixture mode and use the approved in-app browser to verify desktop and narrow layouts plus Safe/Unsafe interactions.
-- [ ] Initialize/publish the GitHub repository only after a final secret scan and successful verification.
+- [x] Initialize/publish the GitHub repository only after a final secret scan and successful verification.

@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     fileParallelism: false,
     hookTimeout: 60_000,
-    projects: ['packages/*', 'services/*'],
+    projects: ['apps/*', 'packages/*', 'services/*'],
     testTimeout: 30_000,
   },
 });
