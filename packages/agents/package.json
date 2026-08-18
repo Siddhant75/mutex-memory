@@ -1,0 +1,17 @@
+{
+  "name": "@mutex-memory/agents",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1111.0",
+    "@mutex-memory/contracts": "workspace:*",
+    "zod": "4.4.3"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "mutex-memory",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.34.5",
+  "engines": {
+    "node": "24.x",
+    "pnpm": "10.x"
+  },
+  "scripts": {
+    "build:lambda": "node --import tsx scripts/build-lambda.ts",
+    "typecheck": "pnpm -r typecheck",
+    "test": "node --env-file-if-exists=.env.test.local ./node_modules/vitest/vitest.mjs --run",
+    "test:integration": "node --env-file-if-exists=.env.test.local ./node_modules/vitest/vitest.mjs packages/db/test/decision-repository.integration.test.ts --run",
+    "test:concurrency": "node --env-file-if-exists=.env.test.local --import tsx scripts/run-concurrency-test.ts",
+    "seed:memory": "node --env-file-if-exists=.env.test.local --import tsx scripts/seed-memory.ts",
+    "migrate": "pnpm --filter @mutex-memory/db migrate"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.3",
+    "esbuild": "0.27.0",
+    "tsx": "4.20.6",
+    "typescript": "7.0.2",
+    "vitest": "4.1.10"
+  }
+}

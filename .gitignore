@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.pnpm-store/
+.worktrees/
+
+.env
+.env.*
+!.env.example
+
+*.log
+*.secret.json
+*.tsbuildinfo
+.DS_Store
+Thumbs.db

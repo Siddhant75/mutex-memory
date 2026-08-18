@@ -1,0 +1,19 @@
+{
+  "name": "@mutex-memory/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./lambda": "./src/lambda.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mutex-memory/agents": "workspace:*",
+    "@mutex-memory/db": "workspace:*",
+    "@mutex-memory/demo": "workspace:*",
+    "zod": "4.4.3"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Transform": "AWS::Serverless-2016-10-31",
+  "Description": "Mutex Memory hackathon demo API",
+  "Parameters": {
+    "AllowedOrigin": {
+      "Type": "String",
+      "Default": "*",
+      "Description": "Frontend origin allowed by the Lambda Function URL"
+    },
+    "BedrockModelId": {
+      "Type": "String",
+      "Description": "Bedrock proposal model ID or inference profile ID"
+    },
+    "DatabaseSecretArn": {
+      "Type": "String",
+      "NoEcho": true,
+      "Description": "Secrets Manager secret ARN containing a DATABASE_URL JSON key"
+    }
+  },
+  "Resources": {
+    "DemoApiFunction": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Architectures": ["x86_64"],
+        "CodeUri": "../dist/lambda",
+        "Description": "Mutex Memory Safe/Unsafe demo API",
+        "Environment": {
+          "Variables": {
+            "BEDROCK_MODEL_ID": { "Ref": "BedrockModelId" },
+            "DATABASE_URL": {
+              "Fn::Sub": "{{resolve:secretsmanager:${DatabaseSecretArn}:SecretString:DATABASE_URL}}"
+            }
+          }
+        },
+        "FunctionUrlConfig": {
+          "AuthType": "NONE",
+          "Cors": {
+            "AllowHeaders": ["content-type"],
+            "AllowMethods": ["GET", "POST"],
+            "AllowOrigins": [{ "Ref": "AllowedOrigin" }]
+          }
+        },
+        "Handler": "index.handler",
+        "MemorySize": 512,
+        "Policies": [
+          {
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": ["bedrock:InvokeModel"],
+                "Resource": "*"
+              }
+            ]
+          }
+        ],
+        "Runtime": "nodejs22.x",
+        "Timeout": 60
+      }
+    }
+  },
+  "Outputs": {
+    "DemoApiUrl": {
+      "Description": "Public Mutex Memory demo API URL",
+      "Value": { "Fn::GetAtt": ["DemoApiFunctionUrl", "FunctionUrl"] }
+    }
+  }
+}
