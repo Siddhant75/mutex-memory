@@ -38,11 +38,11 @@
 - Produces: `DemoApiClient` with `reset(): Promise<DemoTrace>` and `run(input: RunInput): Promise<DemoRunTrace>`.
 - Produces: `createHttpDemoApiClient(baseUrl, fetchImpl?)` and validated frontend evidence types.
 
-- [ ] Write API-client tests proving route/body construction, envelope validation, and sanitized errors.
-- [ ] Run the focused tests and confirm they fail because the client does not exist.
-- [ ] Add the web workspace configuration and exact dependencies.
-- [ ] Implement the minimal Zod schemas and HTTP client.
-- [ ] Run focused tests and `pnpm --filter @mutex-memory/web typecheck`.
+- [x] Write API-client tests proving route/body construction, envelope validation, and sanitized errors.
+- [x] Run the focused tests and confirm they fail because the client does not exist.
+- [x] Add the web workspace configuration and exact dependencies.
+- [x] Implement the minimal Zod schemas and HTTP client.
+- [x] Run focused tests and `pnpm --filter @mutex-memory/web typecheck`.
 
 ### Task 2: Explicit Fixture Client and Controller
 
