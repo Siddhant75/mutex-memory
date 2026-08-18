@@ -56,11 +56,11 @@
 - Consumes: `DemoApiClient`, `DemoMode`, `AgentMode`, `DemoRunTrace` from Task 1.
 - Produces: `createFixtureDemoApiClient()` and `useDemoConsole(client)` state/actions.
 
-- [ ] Write tests for deterministic Safe/Unsafe fixture traces and controller state preservation on failure.
-- [ ] Run focused tests and confirm the missing-feature failures.
-- [ ] Implement the fixture client with canonical UUIDs and evidence.
-- [ ] Implement the controller with selected modes, reset/run operations, pending state, and sanitized error state.
-- [ ] Run focused tests and web typecheck.
+- [x] Write tests for deterministic Safe/Unsafe fixture traces and controller state preservation on failure.
+- [x] Run focused tests and confirm the missing-feature failures.
+- [x] Implement the fixture client with canonical UUIDs and evidence.
+- [x] Implement the controller with selected modes, reset/run operations, pending state, and sanitized error state.
+- [x] Run focused tests and web typecheck.
 
 ### Task 3: Operations Console Components
 
