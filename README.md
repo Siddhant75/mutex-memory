@@ -43,7 +43,7 @@ Implemented and tested:
 - Four-route Lambda API, deployable ESM bundle, and SAM infrastructure template.
 - Responsive React operations console with validated live API responses and an explicit fixture mode.
 
-Still required for the public submission: live AWS deployment proof, judge-visible Managed MCP audit, and demo video. Cloud adapters are unit-tested but have not yet been verified against this AWS account.
+Still required for the public submission: live AWS deployment proof and demo video capture. Cloud adapters are unit-tested but have not yet been verified against this AWS account.
 
 ## Repository Layout
 
@@ -128,7 +128,7 @@ The client never falls back to fixtures after an HTTP failure. AWS Amplify Hosti
 
 ## CockroachDB Managed MCP Audit
 
-The submission uses CockroachDB Cloud Managed MCP as a read-only Memory Auditor against the same live cluster. A judge-visible audit should inspect the canonical case, stored decision, case version, outbox intent, and cited memory IDs. MCP is an external audit path in the MVP; it is not yet exposed through the application UI.
+CockroachDB Cloud Managed MCP acts as a read-only Memory Auditor against the same live cluster. The verified audit inspects the canonical case, stored decision, case version, outbox intent, cited memory IDs, and vector index without mutation permissions. Follow the [Managed MCP audit runbook](docs/MCP_AUDIT.md) to repeat the judge-visible flow.
 
 ## Security
 
