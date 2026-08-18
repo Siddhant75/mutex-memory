@@ -25,6 +25,16 @@ describe('App', () => {
     expect(screen.getByRole('radio', { name: 'Safe' })).toBeChecked();
     expect(screen.getByRole('radio', { name: 'Mock' })).toBeChecked();
     expect(screen.getByRole('button', { name: 'Run decision' })).toBeEnabled();
+    expect(screen.getByText('Awaiting query')).toBeInTheDocument();
+    expect(screen.getByText('No durable decision yet')).toBeInTheDocument();
+    expect(screen.getByText('The run trace will appear here.')).toBeInTheDocument();
+  });
+
+  it('labels a configured backend as Live API', () => {
+    render(<App client={createFixtureDemoApiClient()} />);
+
+    expect(screen.getByText('Live API')).toBeInTheDocument();
+    expect(screen.queryByText('Fixture trace')).not.toBeInTheDocument();
   });
 
   it('makes the unsafe double-action failure visually explicit', async () => {

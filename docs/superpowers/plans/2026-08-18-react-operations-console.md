@@ -97,10 +97,10 @@
 - Consumes: `App` and API factories.
 - Produces: a Vite application selected by `VITE_API_URL` and `VITE_USE_FIXTURES`.
 
-- [ ] Add tests proving fixture mode is explicitly labeled and reduced-data states remain readable.
-- [ ] Implement graphite/amber/cyan visual tokens, responsive grid, focus states, status motion, and reduced-motion behavior.
-- [ ] Wire `main.tsx` to fixture mode only on exact opt-in; otherwise require `VITE_API_URL`.
-- [ ] Run web tests, typecheck, and production build.
+- [x] Add tests proving fixture mode is explicitly labeled and reduced-data states remain readable.
+- [x] Implement graphite/amber/cyan visual tokens, responsive grid, focus states, status motion, and reduced-motion behavior.
+- [x] Wire `main.tsx` to fixture mode only on exact opt-in; otherwise require `VITE_API_URL`.
+- [x] Run web tests, typecheck, and production build.
 
 ### Task 5: Hosting and End-to-End Verification
 
