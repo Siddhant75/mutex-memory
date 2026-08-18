@@ -79,11 +79,11 @@
 - Consumes: controller state/actions from Task 2.
 - Produces: `App({ client, fixtureMode })`, the single judge-facing screen.
 
-- [ ] Write interaction tests proving Reset, Unsafe, and Safe stories are visible and accessible.
-- [ ] Run focused tests and confirm missing-component failures.
-- [ ] Implement the header and seven evidence panels with semantic HTML.
-- [ ] Compose the panels in `App` and keep operation errors inline.
-- [ ] Run focused tests and web typecheck.
+- [x] Write interaction tests proving Reset, Unsafe, and Safe stories are visible and accessible.
+- [x] Run focused tests and confirm missing-component failures.
+- [x] Implement the header and seven evidence panels with semantic HTML.
+- [x] Compose the panels in `App` and keep operation errors inline.
+- [x] Run focused tests and web typecheck.
 
 ### Task 4: Visual System and Entrypoint
 
