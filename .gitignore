@@ -14,3 +14,9 @@ coverage/
 *.tsbuildinfo
 .DS_Store
 Thumbs.db
+
+# Agent and specific hackathon files
+CLAUDE.md
+HACKATHON_MVP.md
+devpost-submission.md
+docs/superpowers/
