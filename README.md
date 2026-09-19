@@ -2,8 +2,6 @@
 
 Mutex Memory is a multi-agent fulfillment coordinator that combines CockroachDB semantic history with `SERIALIZABLE` transactional state. Agents can recall useful outcomes without issuing contradictory actions against the same live case.
 
-Built for the **CockroachDB × AWS Hackathon — Build with Agentic Memory**.
-
 ## Why It Exists
 
 Two agents may each make a reasonable proposal and still create an invalid system outcome. For the canonical lost-package case, one agent proposes a refund while another proposes a replacement.
@@ -42,8 +40,6 @@ Implemented and tested:
 - Deterministic Safe/Unsafe orchestration and winner-only episodic-memory persistence.
 - Four-route Lambda API, deployable ESM bundle, and SAM infrastructure template.
 - Responsive React operations console with validated live API responses and an explicit fixture mode.
-
-Still required for the public submission: live AWS deployment proof and demo video capture. Cloud adapters are unit-tested but have not yet been verified against this AWS account.
 
 ## Repository Layout
 
@@ -132,7 +128,7 @@ CockroachDB Cloud Managed MCP acts as a read-only Memory Auditor against the sam
 
 ## Security
 
-Never commit populated environment files, database URLs, AWS credentials, certificates, or `*.secret.json` files. The public Function URL is intentionally unauthenticated for the hackathon demo and must not expose production data or real refund/shipping effects.
+Never commit populated environment files, database URLs, AWS credentials, certificates, or `*.secret.json` files. The public Function URL is intentionally unauthenticated for the demo and must not expose production data or real refund/shipping effects.
 
 ## License
 
